@@ -27,7 +27,7 @@ class UserController extends Controller
         // $expected_pay = $user->deposits()->where('user_id',auth()->user()->id)
         //                                  ->where('date_for_payment','<', now())
         //                                  ->where('paid',0);
-        return view('users', compact('users'));
+        return view('users', compact('users')); 
     }
 
     public function create(){

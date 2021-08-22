@@ -43,7 +43,14 @@ Route::middleware(['auth', 'verified'])->group(function(){
 
 });
 
-Route::middleware(['admin'])->group(function(){
+
+Route::group(['prefix'=>'verification'], function(){
+    Route::post('send', 'AccountVerifyController@sendVerificationEmail')->name('send');
+    Route::get('verify', 'AccountVerifyController@verify')->name('verify');
+
+});
+
+    Route::middleware(['admin'])->group(function(){
     Route::get('/users', 'UserController@index');
     // Route::get('/users/{id}', 'UserController@getUser');
 

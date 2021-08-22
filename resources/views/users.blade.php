@@ -89,11 +89,8 @@
                                                             <td>BTC</td>
                                                             <td>{{$user->wallet_address}}</td>
                     
-                                                            <td>@php $user-deposits()->where('user_id',auth()->user()->id)
-                                                                ->where('date_for_payment','<', now())
-                                                                ->where('paid',0)->get()@endphp
-                                                            </td>
-                                                            <td>Status</td>
+                                                            <td>--</td>
+                                                            <td>--</td>
                                                             <td>
                                                                 <div role="group" class="btn-group-lg btn-group btn-group-toggle">
                                                                     <a href="{{ url('/admin/user/add/fund/'.$user->id)}}" class="btn btn-success">Pay Now</a>
